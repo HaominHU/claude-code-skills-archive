@@ -6,7 +6,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](/LICENSE)
 
 **🎯 Learning Focus:** Prompt Engineering, Claude Skills creator 
+
 **🤖 AI Tools Used:** Claude, Sonnet 4.6  
+
 **📊 Status:** WIP
 
 ---
