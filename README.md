@@ -52,7 +52,8 @@ This project represents my **AI-assisted learning methodology**:
 **For Claude Code:**
 ```
 1. /init: Set up CLAUDE.md
-2. everytime, ask for plan & wait for coding, ask to confirm, generate TODO, and code step by step, with explanations and comments
+2. Every time, ask fora  plan & wait for coding, ask to confirm, generate TODO, and code step by step, with explanations and comments
+3. Use/compact to summarize the previous discussion after a backlog completion
 ```
 
 ### More in This Series
