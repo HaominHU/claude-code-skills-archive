@@ -31,7 +31,7 @@ Prompt Engineering + Claude Skills Creation
 - **ai-pulse/** - skills for helping me catch up with AI trends and news, including health care AI, SoTA research, and more
 
 ### Existing Skills
-- **weekly-research-briefing**: Generates a personalized tri-weekly news briefing (Monday, Wednesday, Friday) for a health & technology research scientist focused on AI-driven digital health, smart home devices, chronic conditions management, aging in place, and family caregiving. Triggers automatically when the user sends a casual greeting or check-in (e.g., "hey", "anything new?", "good morning", "what's new today?") on a Mon/Wed/Fri, OR when the user explicitly requests a briefing ("run my briefing", "give me today's briefing", "news update"). Always check today's date first. If it is NOT a Mon/Wed/Fri, politely note it is not a scheduled briefing day and ask if they want one anyway. Use this skill any time the user seems to be checking in for updates, news, or research intel — even if they don't say "briefing" explicitly.
+- **weekly-research-briefing**: Generates a personalized news briefing for a health & technology research scientist focused on AI-driven digital health, smart home devices, chronic conditions management, aging in place, and family caregiving. When the user sends a casual greeting or check-in (e.g., "hey", "anything new?", "good morning", "what's new today?"), this skill will prompt to ask if the user needs the brief, or just a random check; OR when the user explicitly requests a briefing ("run my briefing", "give me today's briefing", "news update"). Always check today's date first.
 
 ---
 
