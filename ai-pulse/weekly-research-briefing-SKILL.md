@@ -1,7 +1,7 @@
 ---
 name: weekly-research-briefing
 description: >
-  Generates a personalized tri-weekly news briefing (Monday, Wednesday, Friday) for a health & technology research scientist focused on AI-driven digital health, smart home devices, chronic conditions management, aging in place, and family caregiving. Triggers automatically when the user sends a casual greeting or check-in (e.g., "hey", "anything new?", "good morning", "what's new today?") on a Mon/Wed/Fri, OR when the user explicitly requests a briefing ("run my briefing", "give me today's briefing", "news update"). Always check today's date first. If it is NOT a Mon/Wed/Fri, politely note it is not a scheduled briefing day and ask if they want one anyway. Use this skill any time the user seems to be checking in for updates, news, or research intel — even if they don't say "briefing" explicitly.
+  Generates a personalized research and industry news briefing for a health & technology research scientist focused on AI-driven digital health, smart home devices, chronic conditions management, aging in place, and family caregiving. Triggers whenever the user sends a casual greeting or check-in (e.g., "hey", "anything new?", "good morning", "what's up", "what's new today?") — on ANY day of the week. When a greeting is detected, always ask first: "Just saying hi, or want to see your daily brief?" before running. Also triggers immediately (no prompt needed) when the user explicitly requests a briefing ("run my briefing", "give me today's briefing", "news update"). Use this skill any time the user seems to be checking in for updates, news, or research intel.
 ---
 
 # Weekly Research Briefing Skill
@@ -16,15 +16,19 @@ description: >
 
 ## Trigger Logic
 
-1. Check today's date and day of week
-2. If Mon/Wed/Fri → run the full briefing automatically
-3. If any other day → say: *"Today is [day]. Your next scheduled briefing is [next Mon/Wed/Fri]. Want me to run it anyway?"* Then wait for confirmation.
+**On casual greeting** (e.g., "hey", "good morning", "what's up", "anything new?", "what's new"):
+→ Ask: *"Just saying hi, or want to see your daily brief?"* — then wait for the user to confirm before running.
+
+**On explicit briefing request** (e.g., "run my briefing", "give me today's briefing", "news update", "what's new in health tech"):
+→ Run the full briefing immediately, no confirmation needed.
+
+No day-of-week restrictions — the briefing is available any day.
 
 ---
 
 ## Briefing Structure
 
-Generate **3 sections**, each with **top 5 items**, ranked by impact + relevance to the user's research profile. Coverage window: **within the past ~2 weeks**, prioritizing the most recent and impactful.
+Generate **3 sections**, each with **top 5 items**, ranked by impact + relevance to the user's research profile. Coverage window: **within the past 10 days (1.5 weeks)**. Items older than 10 days must be excluded — check publication dates carefully.
 
 ---
 
@@ -102,16 +106,21 @@ After saving, use `present_files` to share the file with the user.
 
 ## Search Strategy
 
-Use **web search** to find current news. Run these searches in parallel or sequence:
+**Before searching**, calculate the recency cutoff: today's date minus 10 days (1.5 weeks). Only include items published on or after this cutoff date. If a result's date is unclear or cannot be verified to be within 10 days, skip it.
 
-| Section | Suggested search queries |
+Use **web search** to find current news. Construct queries dynamically using today's actual year and month (do NOT hardcode a year). Run these searches in parallel or sequence:
+
+| Section | Suggested search query pattern |
 |---|---|
-| Health Tech | `digital health news 2025`, `mHealth chronic disease technology`, `health tech funding`, `remote patient monitoring news` |
-| SoTA / Dev Skills | `AI model release 2025`, `LLM agent framework news`, `AI coding tools`, `open source AI release` |
-| Healthcare AI | `AI healthcare clinical 2025`, `FDA AI approval`, `health AI startup`, `clinical AI tools` |
-| Smart Home | `smart home aging in place 2025`, `assistive technology new product`, `smart home caregiver device`, `ambient monitoring research` |
+| Health Tech | `digital health news [current month] [current year]`, `mHealth chronic disease technology`, `health tech funding`, `remote patient monitoring news` |
+| SoTA / Dev Skills | `AI model release [current month] [current year]`, `LLM agent framework news`, `AI coding tools`, `open source AI release` |
+| Healthcare AI | `AI healthcare clinical [current month] [current year]`, `FDA AI approval`, `health AI startup`, `clinical AI tools` |
+| Smart Home | `smart home aging in place [current month] [current year]`, `assistive technology new product`, `smart home caregiver device`, `ambient monitoring research` |
 
-- Prefer sources from the **past 2 weeks**
+**Recency enforcement (strict)**:
+- Only include items published within the **past 10 days** (today minus 10 days)
+- Check the publication date on every item — discard anything older than 10 days
+- If search results are skewing old (e.g., returning January results when it's March), refine the query with the current month and year explicitly, or append `"past week"` or `after:[YYYY-MM-DD]` to filter results
 - If a story appears in multiple sources, cite the most authoritative original source
 - Skip paywalled articles where the summary alone isn't sufficient
 - Do not fabricate URLs — only link to real pages returned by search
