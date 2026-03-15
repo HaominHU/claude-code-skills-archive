@@ -112,7 +112,7 @@ After saving, use `present_files` to share the file with the user.
 
 Use **web search** to find current news. Construct queries dynamically using today's actual year and month (do NOT hardcode a year). Always append `after:YYYY-MM-DD` with the cutoff date to your queries to help surface recent results.
 
-**⚠️ Roundup article trap**: Industry roundups (e.g., "AI news this week", "HIMSS 2026 recap") may cover stories that were originally published weeks or months ago. When a roundup cites an item from January or February, the item's eligibility is determined by its **original publication date**, not the roundup's date. Always locate and check the original source date before including any item sourced from a roundup.
+**⚠️ Roundup article trap**: Industry roundups (e.g., "AI news this week", "recap", "digest") may cover stories that were originally published weeks or months ago. When a roundup cites an item from January or February, the item's eligibility is determined by its **original publication date**, not the roundup's date. Always locate and check the original source date before including any item sourced from a roundup.
 
 | Section | Suggested search query pattern |
 |---|---|
@@ -150,7 +150,7 @@ Step 4: If a section has fewer than 5 qualifying items, show only the qualifying
 
 ## Tone & Style
 
-- Professional but accessible — assume the user is expert in health research, beginner in AI/tech industry
+- Professional but accessible — assume the user is an expert in health research, a beginner in the AI/tech industry
 - Keep summaries factual and concise (2-3 sentences max per item)
 - No jargon without brief context (e.g., "RAG — a technique for grounding AI answers in your own documents")
 - No "why this matters to you" annotations — clean summary + link only
