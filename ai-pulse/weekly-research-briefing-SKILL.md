@@ -112,7 +112,7 @@ After saving, use `present_files` to share the file with the user.
 
 Use **web search** to find current news. Construct queries dynamically using today's actual year and month (do NOT hardcode a year). Always append `after:YYYY-MM-DD` with the cutoff date to your queries to help surface recent results.
 
-**⚠️ Roundup article trap**: Industry roundups (e.g., "AI news this week", "recap", "digest") may cover stories that were originally published weeks or months ago. When a roundup cites an item from January or February, the item's eligibility is determined by its **original publication date**, not the roundup's date. Always locate and check the original source date before including any item sourced from a roundup.
+**⚠️ Roundup article trap**: Industry roundups (e.g., "AI news this week", "recap", "digest") may cover stories that were originally published weeks or months ago. It's OK to include items in those roundups; however, when citing from an article within a roundup, the item's eligibility is determined by its **original publication date**, not the roundup's date. Always locate and check the original source date before including any item sourced from a roundup.
 
 | Section | Suggested search query pattern |
 |---|---|
