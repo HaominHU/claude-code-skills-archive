@@ -1,7 +1,6 @@
 ---
 name: weekly-research-briefing
-description: >
-  Generates a personalized research news briefing for a health & technology research scientist focused on AI-driven digital health, smart home devices, chronic conditions management, aging in place, and family caregiving. Triggers whenever the user sends a casual greeting or check-in (e.g., "hey", "anything new?", "good morning", "what's up", "what's new today?") — on ANY day of the week. When a greeting is detected, always ask first: "Just saying hi, or want to see your daily brief?" before running. Also triggers immediately (no prompt needed) when the user explicitly requests a briefing ("run my briefing", "give me today's briefing", "news update"). Use this skill any time the user seems to be checking in for updates, news, or research intel.
+description: "Generates a personalized research news briefing for a health & technology research scientist focused on AI-driven digital health, smart home devices, chronic conditions management, aging in place, and family caregiving. Triggers whenever the user sends a casual greeting or check-in (e.g., \"hey\", \"anything new?\", \"good morning\", \"what's up\", \"what's new today?\") — on ANY day of the week. When a greeting is detected, always ask first: \"Just saying hi, or want to see your daily brief?\" before running. Also triggers immediately (no prompt needed) when the user explicitly requests a briefing (\"run my briefing\", \"give me today's briefing\", \"news update\"). Use this skill any time the user seems to be checking in for updates, news, or research intel."
 ---
 
 # Weekly Research Briefing Skill
@@ -114,9 +113,24 @@ Use **web search** to find current news. Construct queries dynamically using tod
 
 **⚠️ Roundup article trap**: Industry roundups (e.g., "AI news this week", "recap", "digest") may cover stories that were originally published weeks or months ago. It's OK to include items in those roundups; however, when citing from an article within a roundup, the item's eligibility is determined by its **original publication date**, not the roundup's date. Always locate and check the original source date before including any item sourced from a roundup.
 
+### Step 0: Viral/Trending Sweep (REQUIRED — do this FIRST, before section searches)
+
+The biggest health+AI stories of the week often break in mainstream media (NYT, Wired, The Atlantic, WSJ) or go viral on tech aggregators before trade press picks them up. A briefing that only searches health trade publications will systematically miss these.
+
+**Before** running section-specific searches, always run these two queries:
+
+1. `health AI startup news today [current date]` — catches mainstream viral stories like NYT/Wired profiles
+2. `techmeme health AI [current month] [current year]` — Techmeme aggregates the most-linked stories in tech; scan the results for health/AI items published within the cutoff window
+
+Scan the results. If any story has clear relevance to the user's research profile (AI, telehealth, digital health, aging in place, caregiving, chronic conditions), flag it and include it in the most appropriate section of the briefing. These viral/mainstream stories often represent the week's highest signal-to-noise items.
+
+**Source priority for this sweep**: NYT, WSJ, Wired, The Atlantic, Techmeme, VentureBeat, TechCrunch — before trade publications.
+
+### Step 1–4: Section-Specific Searches
+
 | Section | Suggested search query pattern |
 |---|---|
-| Health Tech | `digital health news [current month] [current year] after:[cutoff-date]`, `mHealth chronic disease technology`, `health tech funding`, `remote patient monitoring news` |
+| Health Tech | `digital health news [current month] [current year] after:[cutoff-date]`, `mHealth chronic disease technology`, `health tech funding`, `remote patient monitoring news`, `telehealth startup news [current month] [current year]` |
 | SoTA / Dev Skills | `AI model release [current month] [current year] after:[cutoff-date]`, `LLM agent framework news`, `AI coding tools`, `open source AI release` |
 | Healthcare AI | `AI healthcare clinical [current month] [current year] after:[cutoff-date]`, `FDA AI approval`, `health AI startup`, `clinical AI tools` |
 | Smart Home | `smart home aging in place [current month] [current year] after:[cutoff-date]`, `assistive technology new product`, `smart home caregiver device`, `ambient monitoring research` |
@@ -150,7 +164,7 @@ Step 4: If a section has fewer than 5 qualifying items, show only the qualifying
 
 ## Tone & Style
 
-- Professional but accessible — assume the user is an expert in health research, a beginner in the AI/tech industry
+- Professional but accessible — assume the user is an expert in health research, beginner in the AI/tech industry
 - Keep summaries factual and concise (2-3 sentences max per item)
 - No jargon without brief context (e.g., "RAG — a technique for grounding AI answers in your own documents")
 - No "why this matters to you" annotations — clean summary + link only
