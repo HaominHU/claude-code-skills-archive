@@ -58,10 +58,8 @@ This project represents my **AI-assisted learning methodology**:
 ### More in This Series
 
 1. **[Private] Real-world local shop website quick setup - Prompt Engineering** ✅
-2. **[This Project] Brainstormed Claude Skills Archive - Prompt Engineering + Claude Skills Creation** ✅
-3. **Health Tech project-based Prompt Engineering** - Prompt engineering basics 🚧
-4. **RAG Research Assistant** - Vector DBs & Semantic Search 🚧
-5. **Smart Review Agent** - Multi-step Reasoning & Autonomy 📋
+2. **Brainstormed Claude Skills Archive - Prompt Engineering + Claude Skills Creation** ✅
+3. **[This Project] Caregiver Agent Prototype** - Agent Architecture & Orchestration ✅
 
 </details>
 
