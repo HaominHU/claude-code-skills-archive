@@ -22,7 +22,7 @@ Prompt Engineering + Claude Skills Creation
 
 ```
 1. Open Claude Desktop
-2. Settings -> Capabilities -> Skills: make sure skill-creator is enabled
+2. Leftside Menu Bar -> Customize -> Skills: make sure skill-creator is enabled
 3. Start chat with Claude, or select +Add -> Create a Skill through Claude
 4. Complete the skill, then upload back to settings -> Capabilities -> Skills for sustained use
 ```
@@ -70,9 +70,7 @@ This project represents my **AI-assisted learning methodology**:
 **License:** MIT
 
 **AI Tools Used:**
-- Google AI Studio (Gemini 3 Pro) - UI design and prototyping
-- Claude Code (Sonnet 4.6) - Framework setup, logic generation, and coding assistance
-- GitHub Copilot - Coding assistance and debugging
+- Claude Code (Sonnet 4.6) - Skills Generation
 
 **Reference**
 - https://www.youtube.com/watch?v=wO8EboopboU
