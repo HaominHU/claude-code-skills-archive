@@ -58,9 +58,9 @@ This project represents my **AI-assisted learning methodology**:
 ### More in This Series
 
 1. **[Private] Real-world local shop website quick setup - Prompt Engineering** ✅
-2. **Brainstormed Claude Skills Archive - Prompt Engineering + Claude Skills Creation** ✅
-3. **[This Project] Caregiver Agent Prototype** - Agent Architecture & Orchestration ✅
-4. **[Codex Pet Runs](https://github.com/HaominHU/pet-runs)** - Codex Creative Asset Generation ✅
+2. **[This Project] Brainstormed Claude Skills Archive - Prompt Engineering + Claude Skills Creation** ✅
+3. **[Caregiver Agent Prototype](https://github.com/HaominHU/mvp-cg-agent)** - Agent Architecture & Orchestration ✅
+4. **[Codex Pet Runs](https://github.com/HaominHU/codex-pet-run-cupcake)** - Codex Creative Asset Generation ✅
 
 </details>
 
